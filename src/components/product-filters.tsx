@@ -31,8 +31,8 @@ export function FilterControls({ currentSearchParams }: FilterControlsProps) {
   const [categories, setCategories] = useState<Category[]>([]);
   const [types, setTypes] = useState("1");
   const searchParams = useSearchParams();
-  const DEFAULT_MIN_PRICE = 0;
-  const DEFAULT_MAX_PRICE = 1000;
+  const DEFAULT_MIN_PRICE = 300;
+  const DEFAULT_MAX_PRICE = 2000;
 
   useEffect(() => {
     async function getCategory() {
@@ -180,7 +180,7 @@ export function FilterControls({ currentSearchParams }: FilterControlsProps) {
           <label htmlFor="type">النوع</label>
           <Select value={types} onValueChange={setTypes}>
             <SelectTrigger className="w-full">
-              <SelectValue placeholder="الكل" />
+              <SelectValue placeholder="اختر النوع" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="1">صباحي</SelectItem>
